@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JS REST EXAMPLES</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/loading-overlay.js"></script>
+
+
+<div id="section1">
+    <div class="section1-wrapper">
+        <div class="action-wrapper">
+            <span>Select REST action</span>
+            <select id="selectedAction" name="restAction">
+                <option value="xml-to-pdf-cv-esp" data-filetype='pdf' data-input-filetype='xml'>XML to PDF CV+ESP</option>
+                <option value="xml-to-pdf-esp-only" data-filetype='pdf' data-input-filetype='xml'>XML to PDF ESP</option>
+                <option value="xml-to-pdf-cv-only" data-filetype='pdf' data-input-filetype='xml'>XML to PDF CV</option>
+                <option value="xml-to-doc" data-filetype='doc' data-input-filetype='xml'>XML to Word</option>
+                <option value="xml-to-odt" data-filetype='odt' data-input-filetype='xml'>XML to ODT</option>
+                <option value="xml-to-json" data-filetype='json' data-input-filetype='xml'>XML to JSON</option>
+                <option value="xml-upgrade" data-filetype='xml' data-input-filetype='xml'>XML Upgrade</option>
+
+                <option value="json-to-pdf-cv-esp" data-filetype='pdf' data-input-filetype='json'>JSON to PDF CV+ESP</option>
+                <option value="json-to-pdf-esp-only" data-filetype='pdf' data-input-filetype='json'>JSON to PDF ESP</option>
+                <option value="json-to-pdf-cv-only" data-filetype='pdf' data-input-filetype='json'>JSON to PDF CV</option>
+                <option value="json-to-doc" data-filetype='doc' data-input-filetype='json'>JSON to Word</option>
+                <option value="json-to-odt" data-filetype='odt' data-input-filetype='json'>JSON to ODT</option>
+
+                <option value="json-to-xml-cv" data-filetype='xml' data-input-filetype='json'>JSON to XML CV</option>
+                <option value="json-to-xml-esp" data-filetype='xml' data-input-filetype='json'>JSON to XML ESP</option>
+                <option value="json-to-xml" data-filetype="xml" data-input-filetype='json'>JSON to XML CV+ESP</option>
+            </select>
+        </div>
+
+        <select id="selectLanguage" name="language">
+            <option value="bg">български</option>
+            <option value="es">español</option>
+            <option value="cs">čeština</option>
+            <option value="da">dansk</option>
+            <option value="de">Deutsch</option>
+            <option value="et">eesti keel</option>
+            <option value="el">ελληνικά</option>
+            <option value="en" selected>English</option>
+            <option value="fr">français</option>
+            <option value="hr">hrvatski</option>
+            <option value="is">íslenska</option>
+            <option value="it">italiano</option>
+            <option value="lv">latviešu valoda</option>
+            <option value="lt">lietuvių kalba</option>
+            <option value="hu">Magyar</option>
+            <option value="mk">македонски</option>
+            <option value="mt">Malti</option>
+            <option value="nl">Nederlands</option>
+            <option value="nb">Norsk </option>
+            <option value="pl">polski</option>
+            <option value="pt">português</option>
+            <option value="ro">română </option>
+            <option value="sk">slovenčina</option>
+            <option value="sl">slovenščina</option>
+            <option value="fi">suomi</option>
+            <option value="sv">svenska</option>
+            <option value="tr">Türkçe</option>
+        </select>
+    </div>
+    <div class="content-wrapper">
+        <textarea id="inputTextArea" class="" name="inputFile" rows="20" cols="50" placeholder="Copy/Paste here your xml/json file"></textarea>
+        <button id="convertButton">CONVERT</button>
+        <textarea id="outputTextArea" class="" name="outputFile" rows="20" cols="50" placeholder="Converted document (xml/json)"></textarea>
+    </div>
+
+</div>
+<div id="section2" class="">
+    <span>Select PDF to export XML</span>
+    <input id="importPDFFile" type="file">
+
+</div>
+
+</body>
+</html>
+
+
