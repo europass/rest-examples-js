@@ -45,6 +45,7 @@ $(document).ready(function() {
                     var reader = new FileReader();
                     reader.onload = function(event){
                         $("#outputTextArea").val(reader.result);
+                        $.loadingOverlay().cancel(spinHandle);
                         return;
                     };
                     reader.readAsText(blob);
@@ -71,10 +72,11 @@ $(document).ready(function() {
                         }, 100); // cleanup 100
                     }
                 }
-
                 $.loadingOverlay().cancel(spinHandle);
             }
-            else {}
+            else {
+                $.loadingOverlay().cancel(spinHandle);
+            }
         };
 
         xmlhttp.setRequestHeader('Content-Type', 'application/' + inputFiletype);
@@ -94,6 +96,7 @@ $(document).ready(function() {
             var file = files[i];
             if (!file.type.match('pdf')) {
                 alert('not valid file to import');
+                $.loadingOverlay().cancel(spinHandle);
                 return;
             }
             var picReader = new FileReader();
@@ -108,9 +111,9 @@ $(document).ready(function() {
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         $("#outputTextArea").val(this.responseText);
-                        $.loadingOverlay().cancel(spinHandle);
                         return;
                     }
+                    $.loadingOverlay().cancel(spinHandle);
                 };
 
                 xhr.send(pdfArrayResult);
